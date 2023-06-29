@@ -38,6 +38,6 @@
             (SELECT COUNT(*) FROM FIREFIGHTER AS F WHERE R.rep_id = F.rep_id AND R.fire_id = F.fire_id);
       </p>
       <img src="https://github.com/dahyunko/Fire-safety-management-system/assets/101400650/f6abf86d-4d5e-4abd-9a06-9aedda6aeac5" width="900" >
-      <p>[GUI 화면]</p>
+      <p>[3번 소방대원 신고에 할당]</p>
 </div>
   </br>
