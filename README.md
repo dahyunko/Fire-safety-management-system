@@ -17,37 +17,27 @@
 ```
 &nbsp;&nbsp;⭐ <strong>ERD & relation table schema</strong> <br />
 <div align="center">
-      <img src="https://github.com/dahyunko/dahyunko/assets/101400650/d7950de8-51a6-4715-a264-2c91b1525479" width="600" >
-      <p>[ERP]</p></br>
-      <img src="https://github.com/dahyunko/dahyunko/assets/101400650/208514ae-7a36-4e75-8b3c-b94f4a408036" width="600" >
-      <p>[시스템 구성도]</p>
+      <img src="https://github.com/dahyunko/Fire-safety-management-system/assets/101400650/13cf8b72-1259-45cc-b975-457ab11b21f8" width="600" >
+      <p>[ERD]</p></br>
+      <img src="https://github.com/dahyunko/Fire-safety-management-system/assets/101400650/29530c9c-36fe-497e-b1ab-e1cf5a86ffaf" width="600" >
+      <p>[relation table schema]</p>
 </div>
 
 <br />
 
-## Function1. Value <br/>
+## ISSUE. 소방대원 신고에 할당하기 <br/>
 ```git
-📌 ValueController.js, ValueDto, sort
+📌 JOIN + 이중 SELECT
 ```
-&nbsp;&nbsp;⭐ 나와 기업가치관 추천 작업 <br />
-&nbsp;&nbsp;⭐ <strong>sort</strong> 사용하여 사용자의 5가지 가치관(grow, profit, stable, scale, pay)과 유사한 5개의 기업 추천 알고리즘 <br />
-&nbsp;&nbsp;⭐ 해당 기업의 관련 공고 제공 <br />
+&nbsp;&nbsp;⭐ 소방대원 신고에 할당하기<br />
+&nbsp;&nbsp;⭐ 화재정보의 규모에 따라 소방대원 명수가 할당된다. <br/>
+&nbsp;&nbsp;⭐ 소방대원 명수 = 규모 *2(규모는 1~5로 구분) <br />
 </br>
 <div align="center">
-      <img src="https://github.com/oyr-driver/react_google/assets/101400650/255df0f8-57e3-46ac-8476-37ec94d2956b" width="600" >
-      <p>[기업 추천 알고리즘]</p></br>
-      <img src="https://github.com/oyr-driver/react_google/assets/101400650/27cf93c2-0078-46c9-a93a-d7119b145218" width="900" >
-      <p>[PostMan이용 기업 5곳 확인]</p>
+         <p>   <Strong>SQL: </Strong>SELECT R.rep_id, R.fire_id FROM REPORT AS R WHERE R.scale*2 > <br/>
+            (SELECT COUNT(*) FROM FIREFIGHTER AS F WHERE R.rep_id = F.rep_id AND R.fire_id = F.fire_id);
+      </p>
+      <img src="https://github.com/dahyunko/Fire-safety-management-system/assets/101400650/f6abf86d-4d5e-4abd-9a06-9aedda6aeac5" width="900" >
+      <p>[GUI 화면]</p>
 </div>
-  </br></br>
-<div align="left">
-  &nbsp;&nbsp;⭐ 실제 제공 화면 <br />
-</div>
-<br />
-<div align="center">
-      <img src="https://github.com/ITcareerfit/FRONT/assets/96722691/698ceb8a-cc29-4077-a436-bece677c008c"  width="800" >
-      <img src="https://github.com/ITcareerfit/FRONT/assets/96722691/d5c076ac-8de0-407f-8e75-fc1627f6d10c"  width="800" >
-      <img src="https://github.com/ITcareerfit/FRONT/assets/96722691/8ce55e74-2219-4e88-a1f0-456d2d79bb24"  width="800" >
-  </div>
-<br />
-
+  </br>
